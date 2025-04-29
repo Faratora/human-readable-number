@@ -7,8 +7,12 @@ const ones = ['zero', 'one', 'two', 'three', 'four', 'five',
     'eleven', 'twelve', 'thirteen', 'fourteen',
     'fifteen', 'sixteen', 'seventeen', 'eighteen',
     'nineteen'];
-const tens = [];
-const hundreds = [];
+const tens = ['twenty', 'thirty', 'forty',
+    'fifty', 'sixty', 'seventy', 'eighty',
+    'ninety'];
+const hundreds = ['one hundred', 'two hundred', 'three hundred',
+    'four hundred', 'five hundred', 'six hundred',
+    'seven hundred', 'eight hundred', 'nine hundred'];
 
 if (numbers < 20) {
   return ones
