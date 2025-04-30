@@ -54,4 +54,3 @@ module.exports = function toReadable(number) {
   }
   return numbers;
 };
-console.log(toReadable(140));
