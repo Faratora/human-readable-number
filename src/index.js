@@ -37,18 +37,6 @@ module.exports = function toReadable(number) {
     'ninety',
   ];
 
-  const hundreds = [
-    'one hundred',
-    'two hundred',
-    'three hundred',
-    'four hundred',
-    'five hundred',
-    'six hundred',
-    'seven hundred',
-    'eight hundred',
-    'nine hundred',
-  ];
-
   let numbers = '';
 
   if (number < 20) {
@@ -57,17 +45,13 @@ module.exports = function toReadable(number) {
     numbers =
       tens[Math.floor(number / 10) - 2] +
       (number % 10 ? ` ${ones[number % 10]}` : '');
-  } else {
-    const hundredPart = hundreds[Math.floor(number / 100) - 1];
+  } else if (number < 1000) {
     const remainder = number % 100;
-
-    if (remainder === 0) {
-      numbers = hundredPart;
-    } else {
-      numbers = `${hundredPart} ${toReadable(remainder)}`;
+    numbers = `${ones[Math.floor(number / 100)]} hundred`;
+    if (remainder > 0) {
+      numbers += ` ${toReadable(remainder)}`;
     }
   }
-
   return numbers;
 };
 console.log(toReadable(140));
